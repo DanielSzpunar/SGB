@@ -1,15 +1,14 @@
-import React from 'react'
-import Footer from '../components/footer'
-import Header from '../components/header'
+import React from "react"
+import Layout from "../components/layout"
 
-const ContactPage = ()=> {
-    return (
-      <div>
-      <Header />
+const ContactPage = () => {
+  return (
+    <div>
+      <Layout>
         <h1>Contact:</h1>
-        <Footer />
-      </div>
-    )
+      </Layout>
+    </div>
+  )
 }
 
 export default ContactPage

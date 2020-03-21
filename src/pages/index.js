@@ -1,15 +1,12 @@
 import React from 'react'
-import Footer from '../components/footer'
-import Header from '../components/header'
+import Layout from '../components/layout'
 
 const IndexPage = () => {
-    return(
-        <div>
-        <Header />
-            <h1>SilverGoldPill</h1>
+    return (
+        <Layout>
+            <h1>Home</h1>
             <p>Posts will show up here later on.</p>
-            <Footer />
-        </div>
+        </Layout>
     )
 }
 export default IndexPage
