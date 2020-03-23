@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import indexStyles from './index.module.scss'
 
 
 const IndexPage = () => {
@@ -26,14 +27,15 @@ const IndexPage = () => {
     return (
         <Layout>
             <h1>Home</h1>
-            <ol>
+            <ol className={indexStyles.posts}>
                 {data.allMarkdownRemark.edges.map((edge) => {
                     return (
-                        <li><Link to={`/blog/${edge.node.fields.slug}`}>
-                            <h2>{edge.node.frontmatter.title}</h2>
-                            <p>{edge.node.frontmatter.date}</p>
-                            </Link>
-                        </li>
+                      <li className={indexStyles.post}>
+                        <Link to={`/blog/${edge.node.fields.slug}`}>
+                          <h2>{edge.node.frontmatter.title}</h2>
+                          <p>{edge.node.frontmatter.date}</p>
+                        </Link>
+                      </li>
                     )
                 })}
             </ol>

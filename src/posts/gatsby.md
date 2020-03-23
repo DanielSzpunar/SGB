@@ -5,6 +5,9 @@ date: "2019-03-21"
 
 This is the first post I ever made about Gatsby.
 
+![Epstein](./1CFdt0j.jpg)
+
+
 ##Topics Covered
 
 1. Gatsby
