@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Layout from '../components/layout'
-import Head from '../components/Head'
+import HeadPages from '../components/headPages'
 
 const NotFound = () => {
     return (
         <Layout>
-        <Head title={"You 404'd"} />
+        <HeadPages title={"You 404'd"} siteMetadata={"SilverGoldPill's 404 page."}  />
             <h1>Page Not Found.</h1>
             <p><Link to="/">Head back to home.</Link></p>
         </Layout>

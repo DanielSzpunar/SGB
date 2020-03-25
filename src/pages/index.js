@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import indexStyles from './index.module.scss'
-import Head from '../components/Head'
+import HeadPages from '../components/headPages'
 
 const IndexPage = () => {
     const data = useStaticQuery(graphql`
@@ -13,16 +13,23 @@ const IndexPage = () => {
                         title
                         slug
                         publishedDate(formatString:"MMMM Do, YYYY")
+                        images {
+                            description
+                            file {
+                                url
+                            }
+                        }
                     }
                 }
             }
         }
     
     `)
-        console.log(data)
+        console.log(data.allContentfulBlogPost.edges)
+        
     return (
         <Layout>
-        <Head title="Home" />
+        <HeadPages title="Home" siteMetadata="An unbiased website dedicated to everything related to buying, selling, collecting, and stacking precious metals."  />
             <h1>Home</h1>
             <ol className={indexStyles.posts}>
                 {data.allContentfulBlogPost.edges.map((edge, index) => {
@@ -32,6 +39,7 @@ const IndexPage = () => {
                           <h2>{edge.node.title}</h2>
                           <p>{edge.node.publishedDate}</p>
                         </Link>
+                        <img src={edge.node.images[0].file.url} alt="hi" />
                       </li>
                     )
                 })}
